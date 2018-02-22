@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
     let closeButton: CloseButton = {
         let button = CloseButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
         button.layer.shadowRadius = 6.0
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     
     let twitterButton: TwitterButton = {
         let button = TwitterButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         button.layer.shadowColor = UIColor(r: 89, g: 173, b: 235).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
         button.layer.shadowRadius = 6.0
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
     
     let facebookButton: FacebookButton = {
         let button = FacebookButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         button.layer.shadowColor = UIColor(r: 61, g: 90, b: 150).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
         button.layer.shadowRadius = 6.0
@@ -77,7 +77,7 @@ class ViewController: UIViewController {
     
     let instagramButton: InstagramButton = {
         let button = InstagramButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         button.layer.shadowColor = UIColor(r: 255, g: 181, b: 41).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
         button.layer.shadowRadius = 6.0
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
     
     let dribbbleButton: DribbbleButton = {
         let button = DribbbleButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         button.layer.shadowColor = UIColor(r: 231, g: 76, b: 138).cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 5)
         button.layer.shadowRadius = 6.0
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
     @objc func handleLongPress(sender: UILongPressGestureRecognizer) {
         switch sender.state {
         case .began:
-            UIView.animate(withDuration: 0.5,
+            UIView.animate(withDuration: 0.7,
                            delay: 0,
                            options: .curveEaseInOut,
                            animations: { [weak self] in
@@ -122,6 +122,7 @@ class ViewController: UIViewController {
                 }, completion: nil)
             scaleUplowerLayer()
         case .ended:
+            closeButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             UIView.animate(withDuration: 0.7,
                            delay: 0,
                            usingSpringWithDamping: 0.4,
@@ -130,6 +131,11 @@ class ViewController: UIViewController {
                            animations: { [weak self] in
                             self?.containerView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 290, height: 70))
                             self?.containerView.center = (self?.view.center)!
+                            self?.closeButton.transform = .identity
+                            self?.twitterButton.transform = CGAffineTransform(translationX: -110, y: 0)
+                            self?.facebookButton.transform = CGAffineTransform(translationX: -55, y: 0)
+                            self?.dribbbleButton.transform = CGAffineTransform(translationX: 110, y: 0)
+                            self?.instagramButton.transform = CGAffineTransform(translationX: 55, y: 0)
                 }, completion: nil)
             
             removelowerLayer()
@@ -139,7 +145,7 @@ class ViewController: UIViewController {
     }
     
     @objc func handleClose() {
-        UIView.animate(withDuration: 0.5,
+        UIView.animate(withDuration: 0.7,
                        delay: 0,
                        usingSpringWithDamping: 0.4,
                        initialSpringVelocity: 9.0,
@@ -150,6 +156,10 @@ class ViewController: UIViewController {
         
         containerView.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: 0, height: 70))
         containerView.center = view.center
+        twitterButton.transform = .identity
+        facebookButton.transform = .identity
+        dribbbleButton.transform = .identity
+        instagramButton.transform = .identity
     }
     
     func scaleUplowerLayer() {
@@ -214,22 +224,23 @@ class ViewController: UIViewController {
     func setupViews() {
         view.backgroundColor = .coolGrey
         view.addSubview(containerView)
+        
+        view.addSubview(closeButton)
+        closeButton.center = containerView.center
+        
+        view.addSubview(twitterButton)
+        twitterButton.center = containerView.center
+        
+        view.addSubview(facebookButton)
+        facebookButton.center = containerView.center
+        
+        view.addSubview(dribbbleButton)
+        dribbbleButton.center = containerView.center
+        
+        view.addSubview(instagramButton)
+        instagramButton.center = containerView.center
+        
         view.addSubview(shareButton)
-        
-        containerView.addSubview(closeButton)
-        closeButton.anchor(centerX: containerView.centerXAnchor, centerY: containerView.centerYAnchor, size: .init(width: 40, height: 40))
-        
-        containerView.addSubview(twitterButton)
-        twitterButton.anchor(top: closeButton.topAnchor, leading: containerView.leadingAnchor, bottom: closeButton.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: 0, right: 0), size: .init(width: 40, height: 40))
-        
-        containerView.addSubview(facebookButton)
-        facebookButton.anchor(top: twitterButton.topAnchor, leading: twitterButton.trailingAnchor, bottom: twitterButton.bottomAnchor, trailing: nil, padding: .init(top: 0, left: 15, bottom: 0, right: 0), size: .init(width: 40, height: 40))
-        
-        containerView.addSubview(dribbbleButton)
-        dribbbleButton.anchor(top: closeButton.topAnchor, leading: nil, bottom: closeButton.bottomAnchor, trailing: containerView.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 15), size: .init(width: 40, height: 40))
-
-        containerView.addSubview(instagramButton)
-        instagramButton.anchor(top: closeButton.topAnchor, leading: nil, bottom: closeButton.bottomAnchor, trailing: dribbbleButton.leadingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 15), size: .init(width: 40, height: 40))
     }
 
 
