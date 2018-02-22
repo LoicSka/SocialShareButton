@@ -14,6 +14,14 @@
 		32C4280C203C332000DEF5EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32C4280A203C332000DEF5EC /* LaunchScreen.storyboard */; };
 		32C42817203C332000DEF5EC /* SocialShareButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42816203C332000DEF5EC /* SocialShareButtonTests.swift */; };
 		32C42822203C332000DEF5EC /* SocialShareButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42821203C332000DEF5EC /* SocialShareButtonUITests.swift */; };
+		32C42831203C361000DEF5EC /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42830203C361000DEF5EC /* UIView+Extensions.swift */; };
+		32C42833203C367500DEF5EC /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42832203C367500DEF5EC /* UIColor+Extensions.swift */; };
+		32C42842203C6E0D00DEF5EC /* DribbbleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42841203C6E0C00DEF5EC /* DribbbleButton.swift */; };
+		32C42846203C70B800DEF5EC /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42845203C70B800DEF5EC /* FacebookButton.swift */; };
+		32C42848203C71B500DEF5EC /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42847203C71B500DEF5EC /* CloseButton.swift */; };
+		32C4284C203C742600DEF5EC /* InstagramButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C4284B203C742600DEF5EC /* InstagramButton.swift */; };
+		32C42852203C76D600DEF5EC /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42851203C76D500DEF5EC /* ShareButton.swift */; };
+		32C42854203C786800DEF5EC /* TwitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C42853203C786800DEF5EC /* TwitterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		32C4281D203C332000DEF5EC /* SocialShareButtonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialShareButtonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C42821203C332000DEF5EC /* SocialShareButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialShareButtonUITests.swift; sourceTree = "<group>"; };
 		32C42823203C332000DEF5EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32C42830203C361000DEF5EC /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		32C42832203C367500DEF5EC /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		32C42841203C6E0C00DEF5EC /* DribbbleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DribbbleButton.swift; path = ../../../../Desktop/DribbbleButton.swift; sourceTree = "<group>"; };
+		32C42845203C70B800DEF5EC /* FacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookButton.swift; path = ../../../../Desktop/FacebookButton.swift; sourceTree = "<group>"; };
+		32C42847203C71B500DEF5EC /* CloseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloseButton.swift; path = ../../../../Desktop/CloseButton.swift; sourceTree = "<group>"; };
+		32C4284B203C742600DEF5EC /* InstagramButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstagramButton.swift; path = ../../../../Desktop/InstagramButton.swift; sourceTree = "<group>"; };
+		32C42851203C76D500DEF5EC /* ShareButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareButton.swift; path = ../../../../Desktop/ShareButton.swift; sourceTree = "<group>"; };
+		32C42853203C786800DEF5EC /* TwitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,8 @@
 		32C427F5203C332000DEF5EC = {
 			isa = PBXGroup;
 			children = (
+				32C42834203C665500DEF5EC /* View */,
+				32C4282F203C35FC00DEF5EC /* Extensions */,
 				32C42800203C332000DEF5EC /* SocialShareButton */,
 				32C42815203C332000DEF5EC /* SocialShareButtonTests */,
 				32C42820203C332000DEF5EC /* SocialShareButtonUITests */,
@@ -123,6 +141,28 @@
 				32C42823203C332000DEF5EC /* Info.plist */,
 			);
 			path = SocialShareButtonUITests;
+			sourceTree = "<group>";
+		};
+		32C4282F203C35FC00DEF5EC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				32C42830203C361000DEF5EC /* UIView+Extensions.swift */,
+				32C42832203C367500DEF5EC /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		32C42834203C665500DEF5EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32C42853203C786800DEF5EC /* TwitterButton.swift */,
+				32C42851203C76D500DEF5EC /* ShareButton.swift */,
+				32C4284B203C742600DEF5EC /* InstagramButton.swift */,
+				32C42847203C71B500DEF5EC /* CloseButton.swift */,
+				32C42845203C70B800DEF5EC /* FacebookButton.swift */,
+				32C42841203C6E0C00DEF5EC /* DribbbleButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +300,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				32C42804203C332000DEF5EC /* ViewController.swift in Sources */,
+				32C42831203C361000DEF5EC /* UIView+Extensions.swift in Sources */,
+				32C42848203C71B500DEF5EC /* CloseButton.swift in Sources */,
+				32C42846203C70B800DEF5EC /* FacebookButton.swift in Sources */,
 				32C42802203C332000DEF5EC /* AppDelegate.swift in Sources */,
+				32C42833203C367500DEF5EC /* UIColor+Extensions.swift in Sources */,
+				32C42854203C786800DEF5EC /* TwitterButton.swift in Sources */,
+				32C42842203C6E0D00DEF5EC /* DribbbleButton.swift in Sources */,
+				32C4284C203C742600DEF5EC /* InstagramButton.swift in Sources */,
+				32C42852203C76D600DEF5EC /* ShareButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48FWN8V22H;
 				INFOPLIST_FILE = SocialShareButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.721.SocialShareButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +493,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48FWN8V22H;
 				INFOPLIST_FILE = SocialShareButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.721.SocialShareButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
